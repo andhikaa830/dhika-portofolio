@@ -120,11 +120,11 @@ nav a:hover {
 /* Hero Card */
 .hero-card {
     position: relative;
-    width: 350px;
-    height: 450px;
+    width: 320px;
+    height: 320px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
+    border-radius: 50%;
     backdrop-filter: blur(20px);
     display: flex;
     justify-content: center;
@@ -133,7 +133,12 @@ nav a:hover {
 }
 
 .hero-card img {
-    width: 90%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(1.1);
+    position: relative;
     z-index: 2;
 }
 
@@ -255,11 +260,15 @@ footer {
 
 /* Responsive */
 @media(max-width:900px) {
+    header {
+        padding: 15px 5%;
+    }
 
     .hero {
         flex-direction: column;
         text-align: center;
         padding-top: 50px;
+        gap: 30px;
     }
 
     .hero-text h1 {
@@ -272,26 +281,46 @@ footer {
 
     nav {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
+    }
+    
+    .about, .projects {
+        padding: 60px 5%;
     }
 }
 
-.hero-card img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    filter: brightness(0.9) contrast(1.1);
-}
+@media(max-width: 480px) {
+    .hero-text h1 {
+        font-size: 36px;
+    }
 
-.hero-card {
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
+    .hero-text h2 {
+        font-size: 20px;
+    }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .hero-card {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .card-glow {
+        width: 250px;
+        height: 250px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .instagram-btn {
+        width: 100%;
+        text-align: center;
+        max-width: 200px;
+    }
 }
