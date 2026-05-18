@@ -257,6 +257,65 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
+/* Contact Section */
+.contact-section {
+    padding: 100px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-section h2 {
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: #00f7ff;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #888;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #00f7ff;
+    box-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
+}
+
+.contact-form button {
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+}
+
 /* Footer */
 footer {
     text-align: center;
