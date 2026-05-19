@@ -15,16 +15,58 @@ body {
     overflow-x: hidden;
 }
 
-/* Background Glow */
-.bg-glow {
+/* Background Glow Orbs */
+.bg-orbs {
     position: fixed;
-    width: 600px;
-    height: 600px;
-    background: rgba(0, 255, 255, 0.15);
-    filter: blur(120px);
-    top: -200px;
-    right: -200px;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
+    overflow: hidden;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: moveOrb 15s infinite alternate ease-in-out;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 247, 255, 0.2);
+    top: -100px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 500px;
+    height: 500px;
+    background: rgba(0, 247, 255, 0.1);
+    bottom: -100px;
+    right: -100px;
+    animation-delay: -5s;
+    animation-direction: alternate-reverse;
+}
+
+.orb-3 {
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 247, 255, 0.15);
+    top: 40%;
+    left: 40%;
+    animation-delay: -10s;
+}
+
+@keyframes moveOrb {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(100px, -150px) scale(1.2); }
+    66% { transform: translate(-100px, 150px) scale(0.9); }
+    100% { transform: translate(200px, 100px) scale(1.1); }
 }
 
 /* Navbar */
@@ -90,6 +132,11 @@ nav a:hover {
     text-shadow: 0 0 20px #00f7ff;
 }
 
+@keyframes neonPulse {
+    0% { text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff; transform: translateY(0); }
+    100% { text-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff; transform: translateY(-5px); }
+}
+
 .hero-text p {
     max-width: 500px;
     line-height: 1.8;
@@ -108,6 +155,7 @@ nav a:hover {
     border: 1px solid rgba(0, 247, 255, 0.3);
     margin-bottom: 20px;
     margin-top: 10px;
+    animation: neonPulse 2.5s infinite alternate ease-in-out;
 }
 
 .buttons {
@@ -452,4 +500,32 @@ footer {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Continuous Animations for Cards and Forms */
+.about-box, .project-card, .contact-form {
+    animation: floatCard 6s infinite alternate ease-in-out;
+}
+
+@keyframes floatCard {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+
+.about-box:hover, .project-card:hover {
+    animation-play-state: paused;
+}
+
+/* Pulsing Buttons */
+.btn-secondary, .btn-primary {
+    animation: pulseShadow 2s infinite alternate ease-in-out;
+}
+
+@keyframes pulseShadow {
+    0% { box-shadow: 0 0 5px rgba(0, 247, 255, 0.2); }
+    100% { box-shadow: 0 0 20px rgba(0, 247, 255, 0.8); }
+}
+
+.btn-secondary:hover, .btn-primary:hover {
+    animation-play-state: paused;
 }
