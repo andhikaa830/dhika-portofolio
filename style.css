@@ -324,8 +324,69 @@ nav a:hover {
 }
 
 .project-card h3 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: #00f7ff;
+    font-size: 22px;
+}
+
+.project-card p {
+    color: #b5b5b5;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.project-img-placeholder {
+    width: 100%;
+    height: 180px;
+    background: rgba(0, 247, 255, 0.1);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00f7ff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 1px dashed rgba(0, 247, 255, 0.4);
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-gradient {
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    background: linear-gradient(45deg, #00f7ff, #9d00ff);
+    box-shadow: 0 0 15px rgba(157, 0, 255, 0.4);
+    transition: 0.3s;
+}
+
+.btn-gradient:hover {
+    box-shadow: 0 0 25px rgba(0, 247, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #00f7ff;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid #00f7ff;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: #00f7ff;
+    color: #000;
 }
 
 /* Social Links */
