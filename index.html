@@ -7,10 +7,13 @@
     <title>Futuristic Portfolio</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -37,14 +40,17 @@
         <div class="hero-text">
             <h2>Hello, I'm</h2>
             <h1>Andhika Maulana Putra</h1>
-            <p>
+            <p class="username">
                 andhikaaamp23
             </p>
 
             <div class="buttons">
-                <a href="https://wa.me/62881036645278" class="btn-secondary">Whatsapp</a>
-                <a href="https://instagram.com/andhikaaamp23" target="_blank" class="btn-secondary">Instagram</a>
-                <a href="https://github.com/andhikaa830" target="_blank" class="btn-secondary">Github</a>
+                <a href="https://wa.me/62881036645278" class="btn-secondary"><i class="fa-brands fa-whatsapp"></i>
+                    Whatsapp</a>
+                <a href="https://instagram.com/andhikaaamp23" target="_blank" class="btn-secondary"><i
+                        class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="https://github.com/andhikaa830" target="_blank" class="btn-secondary"><i
+                        class="fa-brands fa-github"></i> Github</a>
             </div>
         </div>
 
@@ -55,7 +61,7 @@
     </section>
 
     <!-- About -->
-    <section id="about" class="about">
+    <section id="about" class="about fade-in">
         <h2>About Me</h2>
 
         <div class="about-container">
@@ -69,7 +75,7 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="projects">
+    <section id="experience" class="projects fade-in">
         <h2>Experience</h2>
 
         <div class="project-container">
@@ -89,13 +95,13 @@
         </div>
     </section>
     <!-- Contact -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section fade-in">
         <h2>Contact Me</h2>
 
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
+        <form class="contact-form" action="mailto:email_anda@gmail.com" method="POST" enctype="text/plain">
+            <input type="text" name="Nama" placeholder="Your Name" required>
+            <input type="email" name="Email" placeholder="Your Email" required>
+            <textarea name="Pesan" placeholder="Your Message" rows="5" required></textarea>
             <button type="submit" class="btn-primary">Send Message</button>
         </form>
     </section>
@@ -105,6 +111,21 @@
         <p>© 2026 Futuristic Portfolio</p>
     </footer>
 
+    <!-- Scroll Animation Script -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const hiddenElements = document.querySelectorAll('.fade-in');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
 </body>
 
 </html>
