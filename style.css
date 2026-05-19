@@ -649,7 +649,7 @@ footer {
     height: 220px;
     overflow: hidden;
     border-radius: 15px;
-    margin-bottom: 15px;
+    position: relative;
 }
 
 .project-img-placeholder img {
@@ -657,8 +657,6 @@ footer {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 15px;
-    transition: transform 0.4s ease;
 }
 
 .project-card:hover .project-img-placeholder img {
