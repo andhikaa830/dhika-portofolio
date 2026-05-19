@@ -536,7 +536,7 @@ footer {
     .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 140px; /* Ditambah agar tidak tertutup navbar fixed */
+        padding: 140px 15px 0 15px; /* Menggunakan padding px agar hemat ruang di layar kecil */
         gap: 30px;
     }
 
@@ -592,7 +592,8 @@ footer {
 
 @media(max-width: 480px) {
     .hero-text h1 {
-        font-size: 32px;
+        font-size: 26px; /* Diperkecil agar nama panjang tidak terpotong */
+        line-height: 1.3;
     }
 
     .hero-text h2 {
