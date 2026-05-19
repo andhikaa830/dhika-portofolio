@@ -63,10 +63,21 @@ body {
 }
 
 @keyframes moveOrb {
-    0% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(100px, -150px) scale(1.2); }
-    66% { transform: translate(-100px, 150px) scale(0.9); }
-    100% { transform: translate(200px, 100px) scale(1.1); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(100px, -150px) scale(1.2);
+    }
+
+    66% {
+        transform: translate(-100px, 150px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(200px, 100px) scale(1.1);
+    }
 }
 
 /* Navbar */
@@ -133,8 +144,15 @@ nav a:hover {
 }
 
 @keyframes neonPulse {
-    0% { text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff; transform: translateY(0); }
-    100% { text-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff; transform: translateY(-5px); }
+    0% {
+        text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+        transform: translateY(0);
+    }
+
+    100% {
+        text-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff;
+        transform: translateY(-5px);
+    }
 }
 
 .hero-text p {
@@ -214,9 +232,17 @@ nav a:hover {
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .hero-card img {
@@ -240,9 +266,20 @@ nav a:hover {
 }
 
 @keyframes pulse {
-    0% { opacity: 0.6; transform: scale(0.9); }
-    50% { opacity: 1; transform: scale(1.1); }
-    100% { opacity: 0.6; transform: scale(0.9); }
+    0% {
+        opacity: 0.6;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 0.6;
+        transform: scale(0.9);
+    }
 }
 
 /* About */
@@ -508,8 +545,9 @@ footer {
         flex-direction: column;
         gap: 15px;
     }
-    
-    .about, .projects {
+
+    .about,
+    .projects {
         padding: 60px 5%;
     }
 }
@@ -531,7 +569,7 @@ footer {
         width: 280px;
         height: 280px;
     }
-    
+
     .card-glow {
         width: 250px;
         height: 250px;
@@ -564,29 +602,65 @@ footer {
 }
 
 /* Continuous Animations for Cards and Forms */
-.about-box, .project-card, .contact-form {
+.about-box,
+.project-card,
+.contact-form {
     animation: floatCard 6s infinite alternate ease-in-out;
 }
 
 @keyframes floatCard {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-15px); }
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-15px);
+    }
 }
 
-.about-box:hover, .project-card:hover {
+.about-box:hover,
+.project-card:hover {
     animation-play-state: paused;
 }
 
 /* Pulsing Buttons */
-.btn-secondary, .btn-primary {
+.btn-secondary,
+.btn-primary {
     animation: pulseShadow 2s infinite alternate ease-in-out;
 }
 
 @keyframes pulseShadow {
-    0% { box-shadow: 0 0 5px rgba(0, 247, 255, 0.2); }
-    100% { box-shadow: 0 0 20px rgba(0, 247, 255, 0.8); }
+    0% {
+        box-shadow: 0 0 5px rgba(0, 247, 255, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(0, 247, 255, 0.8);
+    }
 }
 
-.btn-secondary:hover, .btn-primary:hover {
+.btn-secondary:hover,
+.btn-primary:hover {
     animation-play-state: paused;
+}
+
+.project-img-placeholder {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.project-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img-placeholder img {
+    transform: scale(1.05);
 }
